@@ -24,13 +24,21 @@ point = (23, 34)
 #       формула так же есть в интернете
 #       квадратный корень - это возведение в степень 0.5
 #       операции сравнения дают булевы константы True и False
-# TODO здесь ваш код
+point_distance = (point[0] ** 2 + point[1] ** 2) ** 0.5
+if point_distance <= radius:
+    print('True')
+else:
+    print('False')
 
 # Аналогично для другой точки
 point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
 # Или False, если точка лежит вовне круга.
-# TODO здесь ваш код
+point_2_distance = (point_2[0] ** 2 + point_2[1] ** 2) ** 0.5
+if point_2_distance <= radius:
+    print('True')
+else:
+    print('False')
 
 # Пример вывода на консоль:
 #
