@@ -71,9 +71,9 @@ def min_2_el(a, b, c):
     else:
         if c < min_1:
             min_1 = c
-        else:
-            if c < min_2:
-                min_2 = c
+        elif c < min_2:
+            min_2 = c
+
     return min_1, min_2
 
 
