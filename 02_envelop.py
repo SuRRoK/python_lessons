@@ -18,12 +18,18 @@ envelop_x, envelop_y = 10, 7
 # paper_x, paper_y = 3, 4
 # paper_x, paper_y = 11, 9
 paper_x, paper_y = 9, 11
+
+
 # (просто раскоментировать нужную строку и проверить свой код)
 
-if (envelop_x >= paper_x and envelop_y >= paper_y) or (envelop_x >= paper_y and envelop_y >= paper_x):
-    print('Да')
-else:
-    print('Нет')
+def is_suitable_size(hole_x, hole_y, subject_x, subject_y):
+    if (hole_x >= subject_x and hole_y >= subject_y) or (hole_x >= subject_y and hole_y >= subject_x):
+        return 'Да'
+    else:
+        return 'Нет'
+
+
+print(is_suitable_size(envelop_x, envelop_y, paper_x, paper_y))
 
 # Усложненное задание, решать по желанию.
 # Заданы размеры hole_x, hole_y прямоугольного отверстия и размеры brick_х, brick_у, brick_z кирпича (все размеры
@@ -31,10 +37,8 @@ else:
 #
 # Определить, пройдет ли кирпич через отверстие (грани кирпича параллельны сторонам отверстия)
 
-# hole_x, hole_y = 8, 9
+hole_x, hole_y = 8, 9
 # brick_x, brick_y, brick_z = 11, 10, 2
-
-
 # brick_x, brick_y, brick_z = 11, 2, 10
 # brick_x, brick_y, brick_z = 10, 11, 2
 # brick_x, brick_y, brick_z = 10, 2, 11
@@ -51,7 +55,9 @@ else:
 # brick_x, brick_y, brick_z = 6, 11, 3
 # brick_x, brick_y, brick_z = 6, 3, 11
 # brick_x, brick_y, brick_z = 3, 6, 11
-# brick_x, brick_y, brick_z = 3, 11, 6
+brick_x, brick_y, brick_z = 3, 11, 6
+
+
 # (просто раскоментировать нужную строку и проверить свой код)
 
 def min_2_el(a, b, c):
@@ -72,4 +78,5 @@ def min_2_el(a, b, c):
 
 
 min_dim_1, min_dim_2 = min_2_el(brick_x, brick_y, brick_z)
-print(min_dim_1, min_dim_2)
+
+print(is_suitable_size(hole_x, hole_y, min_dim_1, min_dim_2))
