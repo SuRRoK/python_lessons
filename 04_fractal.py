@@ -2,6 +2,7 @@
 
 import simple_draw as sd
 
+sd.resolution = (1400, 800)
 
 # 1) Написать функцию draw_branches, которая должна рисовать две ветви дерева из начальной точки
 # Функция должна принимать параметры:
@@ -53,25 +54,22 @@ def draw_branches(start_point, start_angle, branch_length):
 # Пригодятся функции
 # sd.random_number()
 
-def rand_delta(percent=50, is_positive=False):
+def rand_delta(number, percent=50, is_positive=False):
     if is_positive:
         rand = sd.random_number(0, percent * 10) / 1000
     else:
         rand = sd.random_number(-percent * 10, percent * 10) / 1000
 
-    if rand >= 0:
-        return rand + 1
-    elif rand < 0:
-        return rand - 1
+    return number * rand
 
 
 def draw_random_branches(start_point, start_angle, branch_length):
-    if branch_length < 6:
+    if branch_length < 8:
         return
     start_point = sd.vector(start_point, start_angle, branch_length)
-    delta = int(30 * rand_delta(percent=40))
-    branch_length *= .75 * rand_delta(percent=20, is_positive=True)
-
+    delta = int(30 + rand_delta(30, percent=40))
+    branch_length *= (.75 + rand_delta(0.75, percent=20, is_positive=True))
+    print(rand_delta(30, percent=40), rand_delta(0.75, percent=20))
     shift_angle = start_angle + delta
     draw_random_branches(start_point, shift_angle, branch_length)
 
@@ -79,7 +77,7 @@ def draw_random_branches(start_point, start_angle, branch_length):
     draw_random_branches(start_point, shift_angle, branch_length)
 
 
-root_point = sd.get_point(300, 30)
+root_point = sd.get_point(600, 30)
 draw_random_branches(root_point, 90, 80)
 
 sd.pause()
