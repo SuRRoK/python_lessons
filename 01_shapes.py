@@ -2,7 +2,6 @@
 
 import simple_draw as sd
 
-
 # Часть 1.
 # Написать функции рисования равносторонних геометрических фигур:
 # - треугольника
@@ -28,8 +27,12 @@ import simple_draw as sd
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
 
-def count_angle(start_point, zero_angle, side_length):
-    count_sides = 4
+user_input = input("Введите число граней: ")
+face_count = int(user_input)
+print('Вы ввели', face_count)
+
+
+def count_angle(start_point, zero_angle, side_length, count_sides):
     end_point = start_point
     angle_shift = int(360 / count_sides)
     for angle in range(0, 360 - angle_shift, angle_shift):
@@ -39,8 +42,8 @@ def count_angle(start_point, zero_angle, side_length):
     sd.line(start_point, end_point)
 
 
-point = sd.get_point(400, 200)
-count_angle(point, 45, 60)
+point = sd.get_point(400, 100)
+count_angle(start_point=point, zero_angle=45, side_length=60, count_sides=face_count)
 
 # Часть 1-бис.
 # Попробуйте прикинуть обьем работы, если нужно будет внести изменения в этот код.
