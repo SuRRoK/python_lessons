@@ -9,7 +9,7 @@ import simple_draw as sd
 # Параметры функции: кордината X, координата Y, цвет.
 # Вывести 10 смайликов в произвольных точках экрана.
 
-def smile(x, y, color):
+def draw_smile(x, y, color):
     point_left = sd.get_point(x - 120, y - 100)
     point_right = sd.get_point(x, y)
     sd.ellipse(point_left, point_right, color)
