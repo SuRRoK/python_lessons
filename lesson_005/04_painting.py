@@ -18,7 +18,19 @@
 # пример см. lesson_005/results/04_painting.jpg
 # Приправить своей фантазией по вкусу (коты? коровы? люди? трактор? что придумается)
 
-# TODO здесь ваш код
+import simple_draw as sd
+import draw_library as dl
+
+screen_width = 1400
+screen_height = 800
+sd.resolution = (screen_width, screen_height)
+
+rb_center = sd.get_point(500, -200)
+rb_start_radius = 800
+rb_line_width = 18
+dl.draw_rainbow(dl.rainbow_colors, rb_center, rb_start_radius, rb_line_width)
+
+sd.pause()
 
 # Усложненное задание (делать по желанию)
 # Анимировать картину.
