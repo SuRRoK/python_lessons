@@ -25,10 +25,24 @@ screen_width = 1400
 screen_height = 800
 sd.resolution = (screen_width, screen_height)
 
+# Радуга
 rb_center = sd.get_point(500, -200)
 rb_start_radius = 800
 rb_line_width = 18
+
 dl.draw_rainbow(dl.rainbow_colors, rb_center, rb_start_radius, rb_line_width)
+
+# Стена
+brick_width, brick_height = 40, 20
+wall_width, wall_height = 600, 400
+start_wall_x, start_wall_y = 100, 80
+
+dl.draw_wall(wall_width, wall_height, brick_width, brick_height, start_wall_x, start_wall_y)
+
+# Дерево
+root_point = sd.get_point(600, 30)
+dl.draw_random_branches(root_point, 90, 50)
+
 
 sd.pause()
 

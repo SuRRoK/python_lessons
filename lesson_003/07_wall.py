@@ -5,16 +5,16 @@ import simple_draw as sd
 
 # Нарисовать стену из кирпичей. Размер кирпича - 100х50
 # Использовать вложенные циклы for
-brick_width, brick_height = 72, 31
+brick_width, brick_height = 60, 20
 width = 600
-height = 800
+height = 600
 
-sd.set_screen_size(width, height)
-start_line_x, end_line_x = 0, width
+sd.set_screen_size(width+200, height+200)
+start_line_x = 0
 
-for horizontal_line in range(0, height, brick_height):
+for horizontal_line in range(start_line_x, height, brick_height):
     start_line_point = sd.get_point(start_line_x, horizontal_line)
-    end_line_point = sd.get_point(end_line_x, horizontal_line)
+    end_line_point = sd.get_point(width, horizontal_line)
     sd.line(start_line_point, end_line_point)
 
     if (horizontal_line + brick_height) % (brick_height * 2):
